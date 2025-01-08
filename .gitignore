@@ -1,0 +1,11 @@
+# Ignore raw data files
+data/raw/
+
+# Ignore large intermediate files
+data/processed/
+
+# Ignore Python bytecode and virtual environments
+__pycache__/
+*.pyc
+env/
+venv/
