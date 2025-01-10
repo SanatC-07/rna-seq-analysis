@@ -4,6 +4,9 @@ data/raw/
 # Ignore large intermediate files
 data/processed/
 
+#Ignore metadata
+data/metadata
+
 # Ignore Python bytecode and virtual environments
 __pycache__/
 *.pyc
