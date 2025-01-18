@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SECONDS=0
+
 # Change to base directory
 cd /mnt/c/Users/sanat/Projects/RNA_Seq_Analysis/data/raw
 
@@ -39,3 +41,6 @@ samtools index aligned_reads_sorted.bam
 # Step 5: Quantification
 featureCounts -a Homo_sapiens.GRCh38.113.gtf -o /mnt/c/Users/sanat/Projects/RNA_Seq_Analysis/data/processed/counts.txt -p /mnt/c/Users/sanat/Projects/RNA_Seq_Analysis/data/raw/aligned_reads.bam
 echo "featureCounts finished running!"
+
+duration=$SECONDS
+echo "$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed."
