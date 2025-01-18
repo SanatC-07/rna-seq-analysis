@@ -22,14 +22,20 @@ SRR1039509_1_paired.fastq SRR1039509_1_unpaired.fastq \
 SRR1039509_2_paired.fastq SRR1039509_2_unpaired.fastq \
 ILLUMINACLIP:custom_adapters.fa:2:30:10 \
 SLIDINGWINDOW:4:20 MINLEN:36
+echo "Trimmomatic finished running!"
 
 fastqc SRR1039509_1_paired.fastq SRR1039509_2_paired.fastq SRR1039509_1_unpaired.fastq SRR1039509_2_unpaired.fastq -o /mnt/c/Users/sanat/Projects/RNA_Seq_Analysis/data/raw
 
 # Step 4: Alignment with HISAT2 and Convert SAM to BAM
 # Alignment
 hisat2 -x /mnt/c/Users/sanat/Projects/RNA_Seq_Analysis/data/raw/grch38_genome/genome -1 SRR1039509_1_paired.fastq -2 SRR1039509_2_paired.fastq -S aligned_reads.sam
+echo "HISAT2 finished running!"
 
 # SAM to BAM
 samtools view -bS aligned_reads.sam > aligned_reads.bam
 samtools sort aligned_reads.bam -o aligned_reads_sorted.bam
 samtools index aligned_reads_sorted.bam
+
+# Step 5: Quantification
+featureCounts -a Homo_sapiens.GRCh38.113.gtf -o /mnt/c/Users/sanat/Projects/RNA_Seq_Analysis/data/processed/counts.txt -p /mnt/c/Users/sanat/Projects/RNA_Seq_Analysis/data/raw/aligned_reads.bam
+echo "featureCounts finished running!"
