@@ -1,4 +1,4 @@
-# RNA-Seq Analysis Pipeline
+# 🧬 RNA-Seq Analysis Pipeline
 
 
 ## Overview
@@ -7,7 +7,7 @@ This is a custom RNA-Seq analysis pipeline designed to process raw sequencing da
 The pipeline automates the process of downloading raw data, performing quality checks, trimming adapters, aligning sequences to a reference genome, and generating gene expression counts.
 
 
-## Dependencies
+## 🧰 Dependencies
 Ensure you have the following dependencies installed on your system:
 
 - SRA Toolkit (for prefetch and fasterq-dump)
@@ -23,7 +23,7 @@ Ensure you have the following dependencies installed on your system:
 - featureCounts (for gene expression quantification)
 
 
-## Pipeline Steps
+## 🔁 Pipeline Steps
 The pipeline consists of the following main steps:
 
 ### Step 1: Prefetch SRR Files
@@ -45,7 +45,7 @@ Counts the number of reads aligned to each gene using featureCounts and saves th
 At the end of the pipeline, the script will print the total execution time.
 
 
-## License
+## 📃 License
 This pipeline is provided under the MIT License. See the LICENSE file for more details.
 
 ### Notes on Customization:
