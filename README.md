@@ -44,7 +44,7 @@ Counts the number of reads aligned to each gene using featureCounts and saves th
 At the end of the pipeline, the script will print the total execution time.
 
 
-## License
+## 📃 License
 This pipeline is provided under the MIT License. See the LICENSE file for more details.
 
 ### Notes on Customization:
